@@ -62,7 +62,9 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  var dick_level = Math.log(tile.value) / Math.log(2);
+  var shaft = Array(dick_level).join("=");
+  inner.textContent = "8" + shaft + "D";
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
